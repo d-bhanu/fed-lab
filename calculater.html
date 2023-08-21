@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    <head>
+        <titlt>Calculater</title>
+            <style>
+            #infield{
+                width: 210px;
+                padding: 12px 20px;
+                margin: 3px 7px 3px 5px;
+                border-radius: 5px;
+                box-sizing: border-box;
+                background-color: "grey";
+
+            }
+            button{
+                width: 50px;
+                padding: 5px 10px;
+                margin: 2px;
+                border-radius: 5px;
+                box-sizing: border-box;
+                background-color: skyblue;
+            }
+            table{
+                margin-top:50p;
+                background-color:skyblue;
+                border-radius:8px;
+                border-color:black;
+            }
+            </style>
+            </head>
+            <body>
+                
+                <input tpye="text" id = "infield">
+                <table  width="200px" border="3">
+                <tr>
+                <td><button onclick="getButtonText(this)" value="(">(</button></td>
+                <td><button onclick="getButtonText(this)" value="CE">CE</button></td>
+                <td><button onclick="getButtonText(this)" value=")">)</button></td>
+                <td><button onclick="getButtonText(this)" value="C">C</button></td>
+                </tr>
+                <tr>
+                <td><button onclick="getButtonText(this)" value="1">1</button></td>
+                <td><button onclick="getButtonText(this)" value="2">2</button></td>
+                <td><button onclick="getButtonText(this)" value="3">3</button></td>
+                <td><button onclick="getButtonText(this)" value="+">+</button></td>
+                </tr>
+                <tr>
+                <td><button onclick="getButtonText(this)" value="4">4</button></td>
+                <td><button onclick="getButtonText(this)" value="5">5</button></td>
+                <td><button onclick="getButtonText(this)" value="6">6</button></td>
+                <td><button onclick="getButtonText(this)" value="-">-</button></td>
+                </tr>
+                <tr>
+                <td><button onclick="getButtonText(this)" value="7">7</button></td>
+               <td><button onclick="getButtonText(this)" value="8">8</button></td>
+                <td><button onclick="getButtonText(this)" value="9">9</button></td>
+                <td><button onclick="getButtonText(this)" value="*">*</button></td>
+                </tr>
+                <tr>
+                <td><button onclick="getButtonText(this)" value=".">.</button></td>
+                <td><button onclick="getButtonText(this)" value="0">0</button></td>
+                <td><button onclick="getButtonText(this)" value="=">=</button></td>
+                <td><button onclick="getButtonText(this)" value="/">/</button></td>
+                </tr>
+                </table>
+                <script>
+                function getButtonText(button){
+                    var text=button.getAttribute("value");
+                    var str=document.getElementById("infield").value;
+                    if(text=="ce")
+                    str=str.substring(0,str.length-1);
+                    else if(text === "c")
+                    str=" ";
+                    else if(text === "=")
+                    str=eval(str);
+                    else
+                    str=str+text;
+                    document.getElementById("infield").value=str;
+                }
+                </script>
+       </body>
+       </html>
